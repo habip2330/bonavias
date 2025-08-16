@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../config/api_config.dart';
 
 class BranchService {
   static final BranchService _instance = BranchService._internal();
@@ -113,7 +114,7 @@ class BranchService {
   Future<void> _loadBranchesFromAPI() async {
     try {
       final response = await http.get(
-        Uri.parse('http://192.168.1.105:3001/api/branches')
+        Uri.parse('${ApiConfig.baseUrl}/branches')
       );
       
       if (response.statusCode != 200) {

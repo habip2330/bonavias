@@ -4,8 +4,8 @@ class ApiConfig {
   static const String productionServerUrl = 'https://bonavias-wb3a.vercel.app';
   
   // Development server URL - ngrok ile internet'e açılan server
-  static const String developmentBaseUrl = 'https://60b8fc7c8080.ngrok-free.app/api';
-  static const String developmentServerUrl = 'https://60b8fc7c8080.ngrok-free.app';
+  static const String developmentBaseUrl = 'https://b88f9db58b94.ngrok-free.app/api';
+  static const String developmentServerUrl = 'https://b88f9db58b94.ngrok-free.app';
   
   // Test server URL - test sunucusu için
   static const String testBaseUrl = 'https://test.your-domain.com/api';
@@ -13,8 +13,8 @@ class ApiConfig {
   
   // Şu anda kullanılan URL'ler (değiştirilebilir)
   // APK için production URL kullanın, geliştirme için development URL kullanın
-  static const String baseUrl = productionBaseUrl;  // Vercel URL'ini kullanıyoruz!
-  static const String serverUrl = productionServerUrl;  // Vercel URL'ini kullanıyoruz!
+  static const String baseUrl = developmentBaseUrl;  // ngrok URL'ini kullanıyoruz!
+  static const String serverUrl = developmentServerUrl;  // ngrok URL'ini kullanıyoruz!
   
   // Environment detection
   static bool get isProduction => baseUrl.contains('https://') && !baseUrl.contains('localhost');

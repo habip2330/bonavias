@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/story_model.dart';
+import '../config/api_config.dart';
 
 class StoryService {
-  static const String baseUrl = 'http://192.168.1.105:3001/api';
+  static const String baseUrl = ApiConfig.baseUrl;
   
   // Tüm hikayeleri getir
   static Future<List<Story>> fetchStories() async {

@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/user_campaign_progress.dart';
+import '../config/api_config.dart';
 
 class UserCampaignService {
-  static const String baseUrl = 'http://192.168.1.105:3001/api';
+  static const String baseUrl = ApiConfig.baseUrl;
 
   // Kullanıcının tüm kampanya ilerlemesini getir
   static Future<List<Map<String, dynamic>>> getUserCampaignProgress(String userId) async {

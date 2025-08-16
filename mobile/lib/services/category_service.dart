@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
+import '../config/api_config.dart';
 
 class CategoryService {
   final Dio _dio = Dio();
-  // Kullanıcı kendi API adresini buraya girecek
-  final String baseUrl = 'http://192.168.1.105:3001/api';
+  // API config'den URL'yi al
+  final String baseUrl = ApiConfig.baseUrl;
 
   Future<List<Map<String, dynamic>>> getCategories() async {
     try {

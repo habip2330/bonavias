@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
+import '../config/api_config.dart';
 
 class ProductService {
   final Dio _dio = Dio();
-  // Kullanıcı kendi API adresini buraya girecek
-  final String baseUrl = 'http://192.168.1.105:3001/api';
-  final String serverUrl = 'http://192.168.1.105:3001'; // Server base URL for images
+  // API config'den URL'leri al
+  final String baseUrl = ApiConfig.baseUrl;
+  final String serverUrl = ApiConfig.serverUrl; // Server base URL for images
 
   // Görsel URL'lerini tam URL'ye dönüştür
   String _getFullImageUrl(String? imageUrl) {
