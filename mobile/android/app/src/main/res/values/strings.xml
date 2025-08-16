@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bonavias Cafe &amp; Desserts</string>
+    
+    <!-- Facebook Configuration -->
+    <string name="facebook_app_id">1533443711394339</string>
+    <string name="facebook_client_token">9cf02d826ad9453474e63a415954c0e4</string>
+    <string name="fb_login_protocol_scheme">fb1533443711394339</string>
+</resources> 

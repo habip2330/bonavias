@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "260480695306",
+    "project_id": "bona-5d3a3",
+    "storage_bucket": "bona-5d3a3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260480695306:android:22fc7fafbbd409ec5973f3",
+        "android_client_info": {
+          "package_name": "com.bonavias.desserts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260480695306-tptueg460jg41ckccm7nsk7mvhnb81nq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bonavias.desserts",
+            "certificate_hash": "95e9f87477bbb09b41281378a89dd3f7fb37b7c5"
+          }
+        },
+        {
+          "client_id": "260480695306-lhjqemgcsiffh0ccor75k5qvgpkkfdv3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7HHEDYv8yN34JoaDK-1--PB-b1oqJrO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260480695306-lhjqemgcsiffh0ccor75k5qvgpkkfdv3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "260480695306-608trla7mlmhans0ajlkpum3hp2sbpp4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bonaMobil"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
