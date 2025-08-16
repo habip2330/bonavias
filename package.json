@@ -2,10 +2,10 @@
   "name": "bonavias-api",
   "version": "1.0.0",
   "description": "Bonavias Restaurant API Server for Railway",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
     "build": "echo 'No build step required'",
     "test": "echo 'No tests specified'"
   },
