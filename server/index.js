@@ -6,17 +6,20 @@ const path = require('path');
 const fs = require('fs');
 const app = express();
 
-// cPanel için port 80 kullanın (veya process.env.PORT)
-const port = process.env.PORT || 80;
+// Local development için port 3000 kullanın
+const port = process.env.PORT || 3000;
 
 console.log('🚀 Bonavias API Server başlatılıyor...');
 console.log('📡 Port:', port);
 console.log('🌐 Environment:', process.env.NODE_ENV || 'production');
 
-// Database bağlantısı - cPanel'de environment variable olarak ayarlayın
+// Database bağlantısı - Local PostgreSQL
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgresql://username:password@localhost:5432/database_name',
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+  user: 'postgres',
+  host: 'localhost',
+  database: 'bonavias',
+  password: 'Habip2330@1',
+  port: 5432,
 });
 
 // Database bağlantı testi
