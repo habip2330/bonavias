@@ -7,22 +7,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// PostgreSQL bağlantısı - Local veritabanı
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'bonavias',
-  password: 'Habip2330@1',
-  port: 5432,
-});
+// ngrok proxy server URL'i
+const NGROK_URL = process.env.NGROK_URL || 'https://7bf4e6df889f.ngrok-free.app';
 
-// Database bağlantı testi
-pool.query('SELECT current_database()', (err, res) => {
-  if (err) {
-    console.error('❌ Database bağlantı hatası:', err);
-  } else {
-    console.log('✅ Database bağlandı:', res.rows[0]);
-  }
+// HTTP client için axios kullanacağız
+const axios = require('axios');
+
+// Test endpoint - bu kesin çalışacak
+app.get('/api/test', (req, res) => {
+  res.json({ 
+    message: 'Server is running!',
+    timestamp: new Date().toISOString(),
+    status: 'OK'
+  });
 });
 
 // Test endpoint - bu kesin çalışacak
@@ -65,24 +62,24 @@ app.get('/api/campaigns/active', async (req, res) => {
   }
 });
 
-// Products endpoint - PostgreSQL'den gerçek veri
+// Products endpoint - ngrok proxy server'dan veri
 app.get('/api/products', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM products ORDER BY id DESC');
-    res.json(result.rows);
+    const response = await axios.get(`${NGROK_URL}/api/products`);
+    res.json(response.data);
   } catch (err) {
-    console.error('❌ Products hatası:', err);
+    console.error('❌ Products hatası:', err.message);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
 
-// Categories endpoint - PostgreSQL'den gerçek veri
+// Categories endpoint - ngrok proxy server'dan veri
 app.get('/api/categories', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM categories ORDER BY sort_order ASC, id ASC');
-    res.json(result.rows);
+    const response = await axios.get(`${NGROK_URL}/api/categories`);
+    res.json(response.data);
   } catch (err) {
-    console.error('❌ Categories hatası:', err);
+    console.error('❌ Categories hatası:', err.message);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
