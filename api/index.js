@@ -7,10 +7,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// PostgreSQL bağlantısı
+// PostgreSQL bağlantısı - Local veritabanı
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgresql://username:password@localhost:5432/database_name',
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+  user: 'postgres',
+  host: 'localhost',
+  database: 'bonavias',
+  password: 'Habip2330@1',
+  port: 5432,
 });
 
 // Database bağlantı testi
