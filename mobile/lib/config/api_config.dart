@@ -1,7 +1,7 @@
 class ApiConfig {
-  // Production server URL - habipbahceci.com domain'i
-  static const String productionBaseUrl = 'https://habipbahceci.com/api';
-  static const String productionServerUrl = 'https://habipbahceci.com';
+  // Production server URL - Vercel'de çalışan API
+  static const String productionBaseUrl = 'https://bonavias-wb3a.vercel.app/api';
+  static const String productionServerUrl = 'https://bonavias-wb3a.vercel.app';
   
   // Development server URL - ngrok ile internet'e açılan server
   static const String developmentBaseUrl = 'https://60b8fc7c8080.ngrok-free.app/api';
@@ -13,8 +13,8 @@ class ApiConfig {
   
   // Şu anda kullanılan URL'ler (değiştirilebilir)
   // APK için production URL kullanın, geliştirme için development URL kullanın
-  static const String baseUrl = developmentBaseUrl;  // Geçici olarak development'a döndük
-  static const String serverUrl = developmentServerUrl;  // Geçici olarak development'a döndük
+  static const String baseUrl = productionBaseUrl;  // Vercel URL'ini kullanıyoruz!
+  static const String serverUrl = productionServerUrl;  // Vercel URL'ini kullanıyoruz!
   
   // Environment detection
   static bool get isProduction => baseUrl.contains('https://') && !baseUrl.contains('localhost');
